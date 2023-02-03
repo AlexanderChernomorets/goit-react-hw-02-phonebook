@@ -1,20 +1,22 @@
+import { ContactsSection, ContList, ContTitle, ContItem, ContName, ContNum, DelButton } from './ContactList.styled'
+
 function ContactList({ onRemove, findContact }) {
   return (
-    <div>
-      <p>Contacts</p>
-      <ul>
+    <ContactsSection>
+      <ContTitle>Contacts</ContTitle>
+      <ContList>
         {findContact().map(({ name, number, id }) => (
-          <li key={id}>
-            <span>{name}: </span>
-            <span>{number}</span>
-            <button
+          <ContItem key={id}>
+            <ContName>{name}: </ContName>
+            <ContNum>{number}</ContNum>
+            <DelButton
               onClick={() => {
                 onRemove(id);
               }}
             >
-              Delete
-            </button>
-          </li>
+              Detlete
+            </DelButton>
+          </ContItem>
         ))}
         {/* {list.map(item => {
             return(
@@ -27,8 +29,8 @@ function ContactList({ onRemove, findContact }) {
                 </li>
             )
         })} */}
-      </ul>
-    </div>
+      </ContList>
+    </ContactsSection>
   );
 }
 

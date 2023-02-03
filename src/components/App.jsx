@@ -70,7 +70,6 @@ class App extends Component {
           color: '#010101',
         }}
       >
-        <h2>Phonebook</h2>
         <ContactForm
           onCheckContact={this.handleCheckContact}
           onSubmit={this.formSubmitHandler}

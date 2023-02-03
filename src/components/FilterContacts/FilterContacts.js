@@ -1,16 +1,18 @@
+import { FilterSection, FilterTitle, FilterInput } from './filterContact.styled'
+
 function FilterContact({ filter, onChange, findName }) {
   return (
-    <div>
-      <label>
+    <FilterSection>
+      <FilterTitle>
         Find contacts by name
-        <input
+        <FilterInput
           type="text"
           name="filter"
           value={filter}
           onChange={({ target }) => onChange(target.value)}
         />
-      </label>
-    </div>
+      </FilterTitle>
+    </FilterSection>
   );
 }
 export default FilterContact;
