@@ -19,7 +19,6 @@ export const ContList = styled.ul`
   padding: 0;
 `;
 
-
 export const ContTitle = styled.p`
   display: flex;
   justify-content: center;
@@ -38,7 +37,6 @@ export const ContItem = styled.li`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  
 `;
 
 export const ContName = styled.span`
@@ -76,7 +74,7 @@ export const DelButton = styled.button`
   font-size: 10px;
   font-weight: 400;
   // line-height: 20px;
-//   margin: 10px auto;
+  //   margin: 10px auto;
   max-weight: 50px;
   // padding: 12px 10px;
   text-align: center;

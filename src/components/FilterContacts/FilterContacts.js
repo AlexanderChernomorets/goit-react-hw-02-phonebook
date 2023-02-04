@@ -1,6 +1,11 @@
-import { FilterSection, FilterTitle, FilterInput } from './filterContact.styled'
+import PropTypes from 'prop-types';
+import {
+  FilterSection,
+  FilterTitle,
+  FilterInput,
+} from './FilterContact.styled';
 
-function FilterContact({ filter, onChange, findName }) {
+function FilterContact({ filter, onChange }) {
   return (
     <FilterSection>
       <FilterTitle>
@@ -9,6 +14,7 @@ function FilterContact({ filter, onChange, findName }) {
           type="text"
           name="filter"
           value={filter}
+          placeholder="🔎 Enter name for Search"
           onChange={({ target }) => onChange(target.value)}
         />
       </FilterTitle>
@@ -16,3 +22,8 @@ function FilterContact({ filter, onChange, findName }) {
   );
 }
 export default FilterContact;
+
+FilterContact.propType = {
+  filter: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};

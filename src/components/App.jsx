@@ -36,8 +36,8 @@ class App extends Component {
       contacts: contacts.filter(contact => contact.id !== id),
     }));
 
-    findByName =() => {
-      let filterContact = [];
+  findByName = () => {
+    let filterContact = [];
     if (this.state.filter) {
       filterContact = this.state.contacts.filter(
         contact =>
@@ -48,7 +48,7 @@ class App extends Component {
       return this.state.contacts;
     }
     return filterContact;
-    };
+  };
   // handleNameChange = event => {
   //   this.setState({ name: event.currentTarget.value });
   // };
@@ -77,13 +77,13 @@ class App extends Component {
         <FilterContact
           filter={this.state.filter}
           onChange={this.handleFilterChange}
-          
         />
-        <ContactList 
-        list={this.state.contacts}
-        filter={this.state.filter} 
-        onRemove={this.removeContact}
-        findContact={this.findByName} />
+        <ContactList
+          list={this.state.contacts}
+          filter={this.state.filter}
+          onRemove={this.removeContact}
+          findContact={this.findByName}
+        />
       </div>
     );
   }

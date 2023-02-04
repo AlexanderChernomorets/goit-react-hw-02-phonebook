@@ -1,4 +1,13 @@
-import { ContactsSection, ContList, ContTitle, ContItem, ContName, ContNum, DelButton } from './ContactList.styled'
+import PropTypes from 'prop-types';
+import {
+  ContactsSection,
+  ContList,
+  ContTitle,
+  ContItem,
+  ContName,
+  ContNum,
+  DelButton,
+} from './ContactList.styled';
 
 function ContactList({ onRemove, findContact }) {
   return (
@@ -14,7 +23,7 @@ function ContactList({ onRemove, findContact }) {
                 onRemove(id);
               }}
             >
-              Detlete
+              Delete
             </DelButton>
           </ContItem>
         ))}
@@ -35,3 +44,8 @@ function ContactList({ onRemove, findContact }) {
 }
 
 export default ContactList;
+
+ContactList.propTypes = {
+  onRemove: PropTypes.func.isRequired,
+  findContact: PropTypes.func.isRequired,
+};
