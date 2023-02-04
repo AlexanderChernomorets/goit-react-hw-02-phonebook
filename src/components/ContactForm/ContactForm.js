@@ -28,7 +28,7 @@ class ContactForm extends Component {
     const isValidatedForm = this.validateForm();
 
     if (!isValidatedForm) return;
-    onSubmit({ id: nanoid(10), name, number });
+    onSubmit({ id:nanoid(10), name, number });
 
     this.resetState();
   };
