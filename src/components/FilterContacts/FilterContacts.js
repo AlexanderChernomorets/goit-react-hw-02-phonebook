@@ -3,7 +3,7 @@ import {
   FilterSection,
   FilterTitle,
   FilterInput,
-} from './FilterContact.styled';
+} from './filterContact.styled';
 
 function FilterContact({ filter, onChange }) {
   return (
