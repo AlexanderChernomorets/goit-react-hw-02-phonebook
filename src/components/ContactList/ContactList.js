@@ -27,17 +27,6 @@ function ContactList({ onRemove, findContact }) {
             </DelButton>
           </ContItem>
         ))}
-        {/* {list.map(item => {
-            return(
-                <li key={item.id}>
-                    <span>{item.name}: </span>
-                    <span>{item.number}</span>
-                    <button onClick={() => {
-                      onRemove(item.id)
-                    }}>Delete</button>
-                </li>
-            )
-        })} */}
       </ContList>
     </ContactsSection>
   );

@@ -49,14 +49,8 @@ class App extends Component {
     }
     return filterContact;
   };
-  // handleNameChange = event => {
-  //   this.setState({ name: event.currentTarget.value });
-  // };
 
-  // handleNumberChange = event => {
-  //   this.setState({ number: event.currentTarget.value });
-  // };
-
+  
   render() {
     return (
       <div

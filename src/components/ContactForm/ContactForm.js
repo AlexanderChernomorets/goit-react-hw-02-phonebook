@@ -50,7 +50,6 @@ class ContactForm extends Component {
     return (
       <FormContact onSubmit={this.handleSubmit}>
         <Title>Phonebook</Title>
-
         <FormLabel>
           Name
           <FormInput
