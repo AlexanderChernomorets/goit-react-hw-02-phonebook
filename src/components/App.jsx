@@ -15,18 +15,18 @@ class App extends Component {
   };
 
   formSubmitHandler = data => {
-    this.setState(({ contacts }) => {
-      return { contacts: [data, ...contacts] };
-    });
-  };
-
-  handleCheckContact = name => {
+    console.log(data);
     const { contacts } = this.state;
+    const { name } = data;
     const isExistContact = !!contacts.find(contact => contact.name === name);
 
-    isExistContact && alert(`${name} is already in contacts`);
-
-    return !isExistContact;
+    if (!isExistContact) {
+      this.setState(({ contacts }) => {
+        return { contacts: [data, ...contacts] };
+      });
+    } else {
+      alert(`${name} is already in contacts`);
+    }
   };
 
   handleFilterChange = filter => this.setState({ filter });
@@ -50,12 +50,10 @@ class App extends Component {
     return filterContact;
   };
 
-  
   render() {
     return (
       <div
         style={{
-          // height: '100vh',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
@@ -64,10 +62,7 @@ class App extends Component {
           color: '#010101',
         }}
       >
-        <ContactForm
-          onCheckContact={this.handleCheckContact}
-          onSubmit={this.formSubmitHandler}
-        />
+        <ContactForm onSubmit={this.formSubmitHandler} />
         <FilterContact
           filter={this.state.filter}
           onChange={this.handleFilterChange}
