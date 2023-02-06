@@ -25,10 +25,7 @@ class ContactForm extends Component {
     e.preventDefault();
     const { name, number } = this.state;
     const { onSubmit } = this.props;
-    const isValidatedForm = this.validateForm();
-
-    if (!isValidatedForm) return;
-    onSubmit({ id:nanoid(10), name, number });
+    onSubmit({ id: nanoid(10), name, number });
 
     this.resetState();
   };
@@ -37,15 +34,6 @@ class ContactForm extends Component {
     this.setState({ name: '', number: '' });
   };
 
-  validateForm = () => {
-    const { name, number } = this.state;
-    const { onCheckContact } = this.props;
-    if (!name || !number) {
-      alert(`${name} is already in contacts`);
-      return false;
-    }
-    return onCheckContact(name);
-  };
   render() {
     return (
       <FormContact onSubmit={this.handleSubmit}>
@@ -86,5 +74,4 @@ export default ContactForm;
 
 ContactForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  onCheckContact: PropTypes.func.isRequired,
 };
